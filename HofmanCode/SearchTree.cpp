@@ -1,27 +1,24 @@
 #include "SearchTree.h"
 
-BinaryTree::BinaryTree():root(nullptr)
+SearchTree::SearchTree()
 {  
 }
 
-BinaryTree::~BinaryTree()
+SearchTree::~SearchTree()
 {
 }
 
-bool BinaryTree::isEmpty()
-{
-    return (root==nullptr);
-}
 
-void BinaryTree::insert(Node item)
+
+void SearchTree::insert(Node item)
 {
-    BinaryTreeNode* temp = root;
-    BinaryTreeNode* newNode;
-    BinaryTreeNode* parent=nullptr;
+    BiTreeNode* temp = root;
+    BiTreeNode* newNode;
+    BiTreeNode* parent=nullptr;
 
     while (temp != nullptr) {
         parent = temp;
-        if (item.getFreq() < temp->value.getFreq()) {
+        if (item.getFreq() < temp->data.getFreq()) {
             temp = temp->left;
         }
         else {
@@ -29,10 +26,10 @@ void BinaryTree::insert(Node item)
 
         }
     }
-    newNode = new BinaryTreeNode(item, nullptr, nullptr);
+    newNode = new BiTreeNode(item, nullptr, nullptr);
     if (parent == nullptr)
         root = newNode;
-    else if (item.getFreq() < parent->value.getFreq()) {
+    else if (item.getFreq() < parent->data.getFreq()) {
         parent->left = newNode;
     }
     else {
@@ -41,13 +38,13 @@ void BinaryTree::insert(Node item)
 
 }
 
-BinaryTreeNode* BinaryTree::find(int key)
+BiTreeNode* SearchTree::find(int key)
 {
-    BinaryTreeNode* temp = root;
+    BiTreeNode* temp = root;
     while (temp != nullptr) {
-        if (temp->value.getFreq() == key)
+        if (temp->data.getFreq() == key)
             return temp;
-        if (key < temp->value.getFreq())
+        if (key < temp->data.getFreq())
             temp = temp->left;
         else
             temp = temp->right;
@@ -55,19 +52,19 @@ BinaryTreeNode* BinaryTree::find(int key)
     return nullptr;
 }
 
-void BinaryTree::Delete(int key)
+void SearchTree::Delete(int key)
 {
     if(root!=nullptr){
-        BinaryTreeNode* nodeToD = find(key);
-        BinaryTreeNode* parent = root;
-        BinaryTreeNode* temp = root;
+        BiTreeNode* nodeToD = find(key);
+        BiTreeNode* parent = root;
+        BiTreeNode* temp = root;
         if (nodeToD != nullptr){
             while (temp != nullptr) {
                 if (temp->left == nodeToD || temp->right == nodeToD) {
                     parent = temp;
                     break;
                 }
-                else if (key < temp->value.getFreq())
+                else if (key < temp->data.getFreq())
                         temp = temp->left;
                     else
                         temp = temp->right;
@@ -94,18 +91,18 @@ void BinaryTree::Delete(int key)
     }
 }
 
-BinaryTreeNode* BinaryTree::Min()
+BiTreeNode* SearchTree::Min()
 {
-    BinaryTreeNode* temp = root;
+    BiTreeNode* temp = root;
     while (temp->left != nullptr) {
         temp = temp->left;
     }
     return temp;
 }
 
-BinaryTreeNode* BinaryTree::Max()
+BiTreeNode* SearchTree::Max()
 {
-    BinaryTreeNode* temp = root;
+    BiTreeNode* temp = root;
     while (temp->right != nullptr) {
         temp = temp->right;
     }

@@ -20,6 +20,9 @@ public:
 	BiTree Min();
 	BiTree DeleteMin();
 	void Insert(BiTree tree);
+	const int getHeapSize()const {
+		return heap_size;
+	}
 
 
 

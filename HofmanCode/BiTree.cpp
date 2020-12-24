@@ -25,6 +25,11 @@ BiTreeNode::~BiTreeNode()
 		delete right;
 }
 
+bool BiTree::isEmpty()
+{
+	return (root == nullptr);
+}
+
 void BiTreeNode::inOrder()
 {
 	if (left != nullptr)
@@ -56,6 +61,10 @@ void BiTreeNode::postOrder()
 BiTree::BiTree()
 {
 	root = nullptr;
+}
+BiTree::BiTree(BiTreeNode* root)
+{
+	this->root = root;
 }
 BiTree::BiTree(const BiTree& origin) {
 	root = origin.root;

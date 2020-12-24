@@ -18,9 +18,12 @@ public:
 class BiTree {
 public:
 	BiTree();
+	BiTree( BiTreeNode* root);
 	BiTree(const BiTree& origin);
 	void makeEmpty();
 	~BiTree();
+	bool isEmpty();
+	
 	BiTreeNode* root;
 };
 

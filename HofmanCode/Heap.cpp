@@ -15,7 +15,7 @@ int Heap::Parent(int child_index)
 	return (child_index-1)/2;
 }
 
-void Swap(BiTree first, BiTree second) {
+void Swap(BiTree& first, BiTree& second) {
 	BiTree temp = first;
 	first = second;
 	second = temp;
@@ -91,5 +91,6 @@ void Heap::Insert(BiTree tree)
 		arr[i] = arr[Parent(i)];
 		i = Parent(i);
 	}
+
 	arr[i] = tree;
 }

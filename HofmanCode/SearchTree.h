@@ -1,16 +1,15 @@
-#include"SearchTreeNode.h"
 
-class BinaryTree  {
+#include "BiTree.h"
 
-	public: 
-		BinaryTreeNode* root;
-	public:
-		BinaryTree();
-		~BinaryTree();
+class SearchTree : public BiTree  {
+
+public:
+		SearchTree();
+		~SearchTree();
 		bool isEmpty();
-		BinaryTreeNode* find(int key);
+		BiTreeNode* find(int key);
 		void insert(Node item);
 		void Delete(int key);
-		BinaryTreeNode* Min();
-		BinaryTreeNode* Max();
+		BiTreeNode* Min();
+		BiTreeNode* Max();
 };
