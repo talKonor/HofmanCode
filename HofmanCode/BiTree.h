@@ -1,8 +1,5 @@
 #pragma once
-struct Node {
-	int frequency;
-	char letter;
-};
+#include "node.h"
 class BiTreeNode
 {
 public:
@@ -13,9 +10,6 @@ public:
 	void inOrder();
 	void preOrder();
 	void postOrder();
-
-
-private:
 	Node data;
 	BiTreeNode* left;
 	BiTreeNode* right;
@@ -24,8 +18,9 @@ private:
 class BiTree {
 public:
 	BiTree();
+	BiTree(const BiTree& origin);
+	void makeEmpty();
 	~BiTree();
-private:
 	BiTreeNode* root;
 };
 

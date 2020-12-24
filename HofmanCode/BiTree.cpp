@@ -29,14 +29,14 @@ void BiTreeNode::inOrder()
 {
 	if (left != nullptr)
 		left->inOrder();
-	std::cout << data.letter;
+	std::cout << data.getChar();
 	if (right != nullptr)
 		right->inOrder();
 }
 
 void BiTreeNode::preOrder()
 {
-	std::cout << data.letter;
+	std::cout << data.getChar();
 	if (left != nullptr)
 		left->preOrder();
 	if (right != nullptr)
@@ -50,16 +50,22 @@ void BiTreeNode::postOrder()
 	if (right != nullptr)
 		right->postOrder();
 
-	std::cout << data.letter;
+	std::cout << data.getChar();
 }
 
 BiTree::BiTree()
 {
 	root = nullptr;
 }
+BiTree::BiTree(const BiTree& origin) {
+	root = origin.root;
+}
+
+void BiTree::makeEmpty() {
+	delete root;
+}
 
 BiTree::~BiTree()
 {
-	delete root;
 	root = nullptr;
 }

@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BiTree.h" />
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="SearchTree.h" />
     <ClInclude Include="SearchTreeNode.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BiTree.cpp" />
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="SearchTree.cpp" />
     <ClCompile Include="SearchTreeNode.cpp" />
     <ClCompile Include="main.cpp" />
