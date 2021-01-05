@@ -19,6 +19,7 @@ void Swap(BiTree& first, BiTree& second) {
 	BiTree temp = first;
 	first = second;
 	second = temp;
+	temp.root = nullptr;
 }
 
 void Heap::FixHeap(int node)
@@ -81,7 +82,7 @@ BiTree Heap::DeleteMin()
 	return min;
 }
 
-void Heap::Insert(BiTree tree)
+void Heap::Insert(BiTree& tree)
 {
 	if (heap_size == max_size)
 		throw "ERROR";

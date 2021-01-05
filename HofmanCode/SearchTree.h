@@ -1,4 +1,4 @@
-
+#pragma once
 #include "BiTree.h"
 
 class SearchTree : public BiTree  {
@@ -6,10 +6,9 @@ class SearchTree : public BiTree  {
 public:
 		SearchTree();
 		~SearchTree();
-		bool isEmpty();
-		BiTreeNode* find(int key);
+		BiTreeNode* find(char key);
 		void insert(Node item);
-		void Delete(int key);
+		void Delete(char key);
 		BiTreeNode* Min();
 		BiTreeNode* Max();
 };

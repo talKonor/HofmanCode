@@ -18,7 +18,7 @@ public:
 class BiTree {
 public:
 	BiTree();
-	BiTree( BiTreeNode* root);
+	BiTree(BiTreeNode* root);
 	BiTree(const BiTree& origin);
 	void makeEmpty();
 	~BiTree();

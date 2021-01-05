@@ -1,38 +1,43 @@
-#include "SearchTree.h"
-#include<iostream>
-#include "Heap.h"
-using namespace std;
-void printTree(BiTreeNode* t1);
-void insertToheap(Heap& h1, BiTreeNode* t1);
-int main() {
-	SearchTree t1;
-	Node n1;
-	Heap h1(10);
-	int num1=5;
-	for (int i = 0; i < 10; i++) {
-		n1.setFreq(num1);
-		n1.setCh('a' + i);
-		t1.insert(n1);
-		num1 = rand() % 10;
-	}
-	printTree(t1.root);
-	insertToheap( h1, t1.root);
-	int size = h1.getHeapSize();
-	for (int i = 0; i < size; i++) {
-		BiTree temp = h1.DeleteMin();
-		cout << temp.root->data.getChar() << " : " << temp.root->data.getFreq() << endl;
-	}
+#include "FileManager.h"
 
+int main() {
+	string path;
+	ifstream file;
+	cin >> path;
+		file.open(path);
+		if (!file.is_open())
+		{
+			cout << "File not found";
+			return 0;
+		}
+	SearchTree tree = createTreeFromFile(file);
+	HoffmanHeap hoffman(tree);
+	BiTree hoffmanTree = hoffman.buildCodedTree();
+	int fileWeight = 0;
+	printTree(hoffmanTree.root, fileWeight);
+	cout << "Encoded file weight : " <<	fileWeight <<"bits";
+	file.close();
 }
+
+
+SearchTree& createTreeFromFile(ifstream& file) {
+	SearchTree* tree = new SearchTree();
+	char ch;
+	while (file.get(ch)) {	
+		tree->insert(Node(ch)); // check if works for insert(ch)
+	}
+	return *tree;
+}
+
 
 void insertToheap(Heap& h1, BiTreeNode* t1) {
 	if (t1 == nullptr)
 		return;
 	else
 	{
-		
+		BiTree temp(t1);
 		insertToheap(h1, t1->left);
-		h1.Insert(BiTree(t1));
+		h1.Insert(temp);
 		insertToheap(h1, t1->right);
 		t1->left = nullptr;
 		t1->right = nullptr;
@@ -40,13 +45,20 @@ void insertToheap(Heap& h1, BiTreeNode* t1) {
 	}
 }
 
-void printTree(BiTreeNode* t1) {
+void printTree(BiTreeNode* t1, int& codeSize, string code) {
+	if (t1 == nullptr)return;
+	if (t1->left == nullptr && t1->right == nullptr) {
+		if (t1->data.getChar() == '\n') {
+			cout << "\\n"<< ":" << code << endl;
 
-	if (t1 == nullptr)
+		}
+		else cout << t1->data.getChar() << ":" << code << endl;
+		codeSize += (code.size()) * t1->data.getFreq() ;
 		return;
+	}
 	else {
-		printTree(t1->left);
-		cout << t1->data.getChar() << ":" << t1->data.getFreq() << endl;
-		printTree(t1->right);
+		printTree(t1->left,codeSize,code.append("0"));
+		code.pop_back();
+		printTree(t1->right,codeSize,code.append("1"));
 	}
 }

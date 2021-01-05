@@ -4,7 +4,7 @@
 
 class Heap
 {
-private:
+protected:
 	BiTree* arr;
 	int max_size;
 	int heap_size;
@@ -14,12 +14,13 @@ private:
 	static int Parent(int child_index);
 	void FixHeap(int node);
 public:
-	Heap(int max);
+	
+	Heap(int max=1);
 	Heap(BiTree A[], int n);
 	~Heap();
 	BiTree Min();
 	BiTree DeleteMin();
-	void Insert(BiTree tree);
+	void Insert(BiTree& tree);
 	const int getHeapSize()const {
 		return heap_size;
 	}

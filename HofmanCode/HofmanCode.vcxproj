@@ -140,16 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BiTree.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="Heap.h" />
+    <ClInclude Include="HoffmanHeap.h" />
     <ClInclude Include="SearchTree.h" />
-    <ClInclude Include="SearchTreeNode.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BiTree.cpp" />
     <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="HoffmanHeap.cpp" />
     <ClCompile Include="SearchTree.cpp" />
-    <ClCompile Include="SearchTreeNode.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
   </ItemGroup>

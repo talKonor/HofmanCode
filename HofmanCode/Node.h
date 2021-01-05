@@ -6,7 +6,7 @@ private:
 	char ch;
 public:
 	Node();
-	Node(char ch, int frequency = 0);
+	Node(char ch, int frequency = 1);
 	~Node();
 	
 	bool setCh(char ch);
