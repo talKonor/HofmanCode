@@ -5,14 +5,17 @@ class BiTreeNode
 public:
 	BiTreeNode();
 	BiTreeNode(Node data, BiTreeNode* left, BiTreeNode* right);
+	BiTreeNode(const BiTreeNode& origin);
 	~BiTreeNode();
 
-	void inOrder();
-	void preOrder();
-	void postOrder();
+	void inOrder();	//prints tree in inorder
+	void preOrder(); //prints tree in preorder
+	void postOrder();	//prints tree in postorder
+
 	Node data;
-	BiTreeNode* left;
+	BiTreeNode* left; 
 	BiTreeNode* right;
+	BiTreeNode& operator =(const BiTreeNode& origin) = delete;
 };
 
 class BiTree {

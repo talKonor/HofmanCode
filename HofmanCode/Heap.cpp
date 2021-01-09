@@ -47,14 +47,14 @@ Heap::Heap(int max)
 	allocated = 1;
 }
 
-Heap::Heap(BiTree A[], int n)
+Heap::Heap(BiTree arr[], int size)
 {
-	heap_size = max_size = n;
-	arr = A;
+	heap_size = max_size = size;
+	this->arr = arr;
 
 	allocated = 0;
 
-	for (int i = n / 2 - 1; i >= 0; i--) {
+	for (int i = (size / 2) - 1; i >= 0; i--) {
 		FixHeap(i);
 	}
 }

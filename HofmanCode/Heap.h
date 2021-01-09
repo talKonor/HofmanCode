@@ -16,7 +16,8 @@ protected:
 public:
 	
 	Heap(int max=1);
-	Heap(BiTree A[], int n);
+	Heap(BiTree arr[], int size);
+	Heap(const Heap& origin) = delete;
 	~Heap();
 	void MakeEmpty();
 	bool isEmpty();
@@ -26,6 +27,8 @@ public:
 	const int getHeapSize()const {
 		return heap_size;
 	}
+
+	Heap& operator=(const Heap& origin) = delete;
 
 
 

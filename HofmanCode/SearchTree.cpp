@@ -19,7 +19,7 @@ void SearchTree::insert(Node item)
 	while (temp != nullptr) {
 		parent = temp;
 		if (temp->data.getChar() == item.getChar()) {
-			temp->data.addFreq(1); //enum
+			temp->data.addFreq(); 
 			return;
 		}
 		if (item.getChar() < temp->data.getChar()) {

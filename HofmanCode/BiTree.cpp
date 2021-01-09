@@ -17,6 +17,13 @@ BiTreeNode::BiTreeNode(Node data, BiTreeNode* left, BiTreeNode* right)
 
 }
 
+BiTreeNode::BiTreeNode(const BiTreeNode& origin)
+{
+	left = origin.left;
+	right = origin.right;
+	data = origin.data;
+}
+
 BiTreeNode::~BiTreeNode()
 {
 	if (left != nullptr)

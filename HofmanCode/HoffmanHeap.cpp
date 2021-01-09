@@ -1,7 +1,7 @@
 #include "HoffmanHeap.h"
 
 
-HoffmanHeap::HoffmanHeap(BiTree A[], int n) :Heap(A, n)
+HoffmanHeap::HoffmanHeap(BiTree arr[], int size) :Heap(arr, size)
 {
 }
 
