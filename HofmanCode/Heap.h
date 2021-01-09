@@ -18,6 +18,8 @@ public:
 	Heap(int max=1);
 	Heap(BiTree A[], int n);
 	~Heap();
+	void MakeEmpty();
+	bool isEmpty();
 	BiTree Min();
 	BiTree DeleteMin();
 	void Insert(BiTree& tree);

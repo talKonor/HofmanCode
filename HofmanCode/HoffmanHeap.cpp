@@ -1,9 +1,8 @@
 #include "HoffmanHeap.h"
 
-HoffmanHeap::HoffmanHeap(SearchTree& tree):Heap(127)//enum
+
+HoffmanHeap::HoffmanHeap(BiTree A[], int n) :Heap(A, n)
 {
-	BiTreeNode* root = tree.root;
-	buildHeapFromTree(root);
 }
 
 HoffmanHeap::~HoffmanHeap()
@@ -36,19 +35,3 @@ BiTree& HoffmanHeap::buildCodedTree()
 	return arr[0];
 }
 
-void HoffmanHeap::buildHeapFromTree(BiTreeNode* root)
-{
-	if (root == nullptr){
-		return;
-	}
-	buildHeapFromTree(root->left);
-	
-	BiTree newTree;
-	newTree.root = new BiTreeNode(*root);
-	newTree.root->left = nullptr;
-	newTree.root->right = nullptr;
-	Insert(newTree);
-	newTree.root = nullptr;
-	buildHeapFromTree(root->right);
-
-}

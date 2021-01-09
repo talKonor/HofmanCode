@@ -6,15 +6,15 @@ private:
 	char ch;
 public:
 	Node();
-	Node(char ch, int frequency = 1);
+	Node( char ch, int frequency = 1);
 	~Node();
 	
-	bool setCh(char ch);
+	bool setCh( char ch);
 	bool setFreq(int frequency);
 	
 	void addFreq(int num);
 	
-	char getChar();
+    char getChar();
 	int getFreq();
 };
 

@@ -29,7 +29,7 @@ void Heap::FixHeap(int node)
 	int right = Right(node);
 	if (left < heap_size && arr[left].root->data.getFreq() < arr[node].root->data.getFreq())
 		min = left;
-	if (left < heap_size && arr[right].root->data.getFreq() < arr[min].root->data.getFreq())
+	if (right < heap_size && arr[right].root->data.getFreq() < arr[min].root->data.getFreq())
 		min = right;
 
 	if (min != node) {
@@ -64,6 +64,19 @@ Heap::~Heap()
 	if (allocated)
 		delete[] arr;
 	arr = nullptr;
+}
+
+void Heap::MakeEmpty()
+{
+	for (int i = 0; i < heap_size; i++) {
+		arr[i].root = nullptr;
+	}
+	heap_size = 0;
+}
+
+bool Heap::isEmpty()
+{
+	return (heap_size==0);
 }
 
 BiTree Heap::Min()
