@@ -7,12 +7,12 @@ enum SIZE {
 /// <summary>
 /// This class is an instance of a heap. it can create the BiTree for the huffman code
 /// </summary>
-class HoffmanHeap : public Heap
+class huffmanHeap : public Heap
 {	
 	public:
-		HoffmanHeap(BiTree arr[], int size);
-		HoffmanHeap():Heap(ASSCII){}
-		~HoffmanHeap();
+		huffmanHeap(BiTree arr[], int size);
+		huffmanHeap():Heap(ASSCII){}
+		~huffmanHeap();
 		//creates the huffman tree from the heap using the algorithem.
 		BiTree& buildCodedTree();
 

@@ -1,4 +1,13 @@
 #include "functions.h"
+/// <summary>
+///Hello dear user!
+/// This program generates a huffman code for a text file.
+/// If you wish the compress your story or text insert the path of the file.
+/// The program will print to the screen every letter with its corresponding code.
+/// then the program will print the size of the huffman 
+/// tree in bits(each letters code times its frequency) 
+/// Thank for choosing to compress with us and have an nice day!
+/// </summary>
 
 int main() {
 	string path;

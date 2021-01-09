@@ -142,7 +142,7 @@
     <ClInclude Include="BiTree.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="Heap.h" />
-    <ClInclude Include="HoffmanHeap.h" />
+    <ClInclude Include="HuffmanHeap.h" />
     <ClInclude Include="SearchTree.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
@@ -150,7 +150,7 @@
     <ClCompile Include="BiTree.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="Heap.cpp" />
-    <ClCompile Include="HoffmanHeap.cpp" />
+    <ClCompile Include="HuffmanHeap.cpp" />
     <ClCompile Include="SearchTree.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />

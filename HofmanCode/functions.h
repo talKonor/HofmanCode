@@ -5,7 +5,7 @@
 #include<fstream>
  #include<map>
 #include <stdlib.h>
-#include "HoffmanHeap.h"
+#include "HuffmanHeap.h"
 using namespace std;
 
 

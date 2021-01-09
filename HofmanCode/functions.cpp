@@ -67,6 +67,6 @@ int insertNodeToArr(BiTreeNode* root, BiTree arr[]) {
 BiTree buildHuffmanTree(SearchTree& tree) {
 	BiTree arr[ASSCII];
 	int size = buildArrFromTree(tree, arr);
-	HoffmanHeap hoffman(arr, size);
-	return hoffman.buildCodedTree();
+	huffmanHeap huffman(arr, size);
+	return huffman.buildCodedTree();
 }

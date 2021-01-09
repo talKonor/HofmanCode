@@ -1,15 +1,15 @@
-#include "HoffmanHeap.h"
+#include "HuffmanHeap.h"
 
 
-HoffmanHeap::HoffmanHeap(BiTree arr[], int size) :Heap(arr, size)
+huffmanHeap::huffmanHeap(BiTree arr[], int size) :Heap(arr, size)
 {
 }
 
-HoffmanHeap::~HoffmanHeap()
+huffmanHeap::~huffmanHeap()
 {
 }
 
-BiTree& HoffmanHeap::buildCodedTree()
+BiTree& huffmanHeap::buildCodedTree()
 {
 	BiTree min1, min2,unionTree;
 	if (heap_size == 1) {
