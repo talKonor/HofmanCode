@@ -12,9 +12,11 @@ class huffmanHeap : public Heap
 	public:
 		huffmanHeap(BiTree arr[], int size);
 		huffmanHeap():Heap(ASSCII){}
-		~huffmanHeap();
+		virtual ~huffmanHeap();
 		//creates the huffman tree from the heap using the algorithem.
 		BiTree& buildCodedTree();
+
+		
 
 };
 

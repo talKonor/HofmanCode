@@ -10,6 +10,7 @@
 /// </summary>
 
 int main() {
+	
 	string path;
 	ifstream file;
 	cin >> path;
@@ -37,6 +38,5 @@ int main() {
 	cout << "Encoded file weight : " << fileWeight << " bits";
 	tree.makeEmpty();
 	hoffmanTree.makeEmpty();
-	
 }
 

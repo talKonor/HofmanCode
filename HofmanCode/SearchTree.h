@@ -7,7 +7,7 @@ class SearchTree : public BiTree  {
 
 public:
 		SearchTree();
-		~SearchTree();
+		virtual ~SearchTree();
 		BiTreeNode* find(char key);
 		void insert(Node item);
 		void Delete(char key);

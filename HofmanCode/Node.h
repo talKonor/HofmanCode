@@ -4,6 +4,7 @@ class Node
 private:
 	int frequency;
 	char ch;
+
 public:
 	Node();
 	Node(char ch, int frequency = 1);

@@ -23,9 +23,13 @@ public:
 	BiTree();
 	BiTree(BiTreeNode* root);
 	BiTree(const BiTree& origin);
+	virtual ~BiTree();
 	void makeEmpty();
-	~BiTree();
 	bool isEmpty();
+	BiTree& operator=(const BiTree& origin) {
+		root = origin.root;
+		return *this;
+	}
 	
 	BiTreeNode* root;
 };
